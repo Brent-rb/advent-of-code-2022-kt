@@ -2,10 +2,9 @@ import kotlin.math.max
 import kotlin.math.min
 
 class Day10: Day(10) {
-    private val cycles = mutableListOf<Int>(1)
+    private val cycles = mutableListOf(1)
     override fun solve() {
         constructCycles()
-        println(cycles)
         solve1()
         solve2()
     }
