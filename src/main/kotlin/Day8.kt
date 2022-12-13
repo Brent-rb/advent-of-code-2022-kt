@@ -46,7 +46,6 @@ class Day8: Day(8) {
             val rowList = horizontalTrees[row]
 
             for (column in 1 until rowList.size - 1) {
-                println("Checking $row, $column")
                 val tree = rowList[column]
                 val columnList = verticalTrees[column]
 
@@ -97,9 +96,6 @@ class Day8: Day(8) {
                 break
             }
         }
-
-        println(treeLine)
-        println("Start $startTree $visibleFromLeft")
 
         return visibleFromLeft
     }
