@@ -10,19 +10,21 @@ enum class Direction {
     Right
 }
 class Day9: Day(9) {
-    override fun solve() {
-        solve1()
-        solve2()
+    override fun solve1(isExample: Boolean): String {
+        return "${simulateKnots(2)}"
     }
 
-    private fun solve1() {
-        println("[9.1] Seen: ${simulateKnots(2)}")
+    override fun solve2(isExample: Boolean): String {
+        return "${simulateKnots(10)}"
     }
 
-    private fun solve2() {
-        println("[9.2] Seen: ${simulateKnots(10)}")
+    override fun getExampleAnswer1(): String {
+        TODO("Not yet implemented")
     }
 
+    override fun getExampleAnswer2(): String {
+        TODO("Not yet implemented")
+    }
     private fun simulateKnots(knotsAmount: Int): Int {
         val grid = mutableListOf(mutableListOf(true))
         val knots = MutableList<Point>(knotsAmount) { Point() }

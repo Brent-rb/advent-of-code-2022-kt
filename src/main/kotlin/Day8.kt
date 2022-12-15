@@ -2,14 +2,12 @@ class Day8: Day(8) {
     private var horizontalTrees: MutableList<MutableList<Int>> = mutableListOf()
     private var verticalTrees: MutableList<MutableList<Int>> = mutableListOf()
     private var visibleTrees: MutableList<MutableList<Boolean>> = mutableListOf()
-    override fun solve() {
-        readGrid()
 
-        solve1()
-        solve2()
+    override fun prepare1() {
+        readGrid()
     }
 
-    private fun solve1() {
+    override fun solve1(isExample: Boolean): String {
         var visibleAmount = 0
 
         horizontalTrees.forEachIndexed { row, trees ->
@@ -36,10 +34,10 @@ class Day8: Day(8) {
 
         printVisibleTrees()
 
-        println("[8.1] Visible trees $visibleAmount")
+        return "$visibleAmount"
     }
 
-    private fun solve2() {
+    override fun solve2(isExample: Boolean): String {
         var scenicScore = 0
 
         for (row in 1 until horizontalTrees.size - 1) {
@@ -61,7 +59,15 @@ class Day8: Day(8) {
             }
         }
 
-        println("[8.2] Scenic score: $scenicScore")
+        return "$scenicScore"
+    }
+
+    override fun getExampleAnswer1(): String {
+        TODO("Not yet implemented")
+    }
+
+    override fun getExampleAnswer2(): String {
+        TODO("Not yet implemented")
     }
 
     private fun readGrid() {

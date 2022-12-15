@@ -10,22 +10,31 @@ data class Monkey(
 class Day11: Day(11) {
     private val monkeys: MutableList<Monkey> = mutableListOf()
     private var commonDivisor = 1L
-    override fun solve() {
-        constructMonkeys()
-        solve1()
 
+    override fun prepare1() {
+        constructMonkeys()
+    }
+
+    override fun prepare2() {
         monkeys.clear()
         commonDivisor = 1L
         constructMonkeys()
-        solve2()
     }
 
-    private fun solve1() {
-        println("[11.1] Monkey Madness: ${simulateRounds(20, true)}")
+    override fun solve1(isExample: Boolean): String {
+        return "${simulateRounds(20, true)}"
     }
 
-    private fun solve2() {
-        println("[11.2] Monkey Madness: ${simulateRounds(10000, false)}")
+    override fun solve2(isExample: Boolean): String {
+        return "${simulateRounds(10000, false)}"
+    }
+
+    override fun getExampleAnswer1(): String {
+        TODO("Not yet implemented")
+    }
+
+    override fun getExampleAnswer2(): String {
+        TODO("Not yet implemented")
     }
 
     private fun simulateRounds(rounds: Int, divideBy3: Boolean): Long {

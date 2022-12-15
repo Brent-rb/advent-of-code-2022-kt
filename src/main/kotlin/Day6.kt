@@ -1,17 +1,20 @@
 class Day6: Day(6) {
-    override fun solve() {
-        solve1()
-        solve2()
-    }
-
-    fun solve1() {
+    override fun solve1(isExample: Boolean): String {
         val index = searchForDistinctSubList(4)
-        println("[6.1] $index")
+        return "$index"
     }
 
-    fun solve2() {
+    override fun solve2(isExample: Boolean): String {
         val index = searchForDistinctSubList(14)
-        println("[6.1] $index")
+        return "$index"
+    }
+
+    override fun getExampleAnswer1(): String {
+        TODO("Not yet implemented")
+    }
+
+    override fun getExampleAnswer2(): String {
+        TODO("Not yet implemented")
     }
 
     fun searchForDistinctSubList(size: Int): Int {

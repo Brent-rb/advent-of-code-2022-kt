@@ -3,19 +3,28 @@ import kotlin.math.min
 
 class Day10: Day(10) {
     private val cycles = mutableListOf(1)
-    override fun solve() {
+
+    override fun prepare1() {
         constructCycles()
-        solve1()
-        solve2()
     }
 
-    private fun solve1() {
-        println("[10.1] Strength: ${getStrength(220)}")
+    override fun solve1(isExample: Boolean): String {
+        return "${getStrength(220)}"
     }
 
-    private fun solve2() {
+    override fun solve2(isExample: Boolean): String {
         val crtLines = constructCrt()
         drawCrt(crtLines)
+
+        return ""
+    }
+
+    override fun getExampleAnswer1(): String {
+        TODO("Not yet implemented")
+    }
+
+    override fun getExampleAnswer2(): String {
+        TODO("Not yet implemented")
     }
 
     private fun constructCycles() {

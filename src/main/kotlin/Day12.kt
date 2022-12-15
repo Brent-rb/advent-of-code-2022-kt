@@ -10,20 +10,26 @@ class Day12: Day(12) {
     private lateinit var heightMap: List<MutableList<Int>>
     private val startPos = Point()
     private val endPos = Point()
-    override fun solve() {
+
+    override fun prepare1() {
         constructHeightMap()
-        solve1()
-        solve2()
     }
 
-    private fun solve1() {
-        println("[12.1] Fewest Steps: ${dijkstra(startPos).distance}")
+    override fun solve1(isExample: Boolean): String {
+        return "${dijkstra(startPos).distance}"
     }
 
-    private fun solve2() {
-        println("[12.2] Fewest: ${dijkstra(this.startPos, 0).distance}")
+    override fun solve2(isExample: Boolean): String {
+        return "${dijkstra(this.startPos, 0).distance}"
     }
 
+    override fun getExampleAnswer1(): String {
+        TODO("Not yet implemented")
+    }
+
+    override fun getExampleAnswer2(): String {
+        TODO("Not yet implemented")
+    }
     private fun dijkstra(startPos: Point, aWeight: Int = 1): DijkstraPoint {
         val points = mutableListOf<DijkstraPoint>()
         val dijkstraGrid = MutableList<MutableList<DijkstraPoint>>(heightMap.size) { mutableListOf() }

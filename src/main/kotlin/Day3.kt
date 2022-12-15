@@ -1,10 +1,5 @@
 class Day3: Day(3) {
-    override fun solve() {
-        solve1()
-        solve2()
-    }
-
-    private fun solve1() {
+    override fun solve1(isExample: Boolean): String {
         var sumOfPrios = 0
 
         for (line in lines) {
@@ -22,10 +17,10 @@ class Day3: Day(3) {
             val match = intersect[0]
             sumOfPrios += charToPriority(match)
         }
-        println("[3.1] $sumOfPrios")
+        return sumOfPrios.toString()
     }
 
-    private fun solve2() {
+    override fun solve2(isExample: Boolean): String {
         var i = 0
         var sum = 0
 
@@ -41,8 +36,17 @@ class Day3: Day(3) {
             i += 3
         }
 
-        println("[3.2] $sum")
+        return sum.toString()
     }
+
+    override fun getExampleAnswer1(): String {
+        TODO("Not yet implemented")
+    }
+
+    override fun getExampleAnswer2(): String {
+        TODO("Not yet implemented")
+    }
+
 
     private fun charToPriority(letter: Char): Int {
         return if (letter.isLowerCase()) {

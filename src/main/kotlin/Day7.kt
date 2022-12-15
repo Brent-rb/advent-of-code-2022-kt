@@ -55,10 +55,25 @@ class Node {
 }
 
 class Day7: Day(7) {
-    override fun solve() {
-        val root = constructTree()
-        solvePart1(root)
-        solvePart2(root)
+    lateinit var root: Node
+    override fun prepare1() {
+        root = constructTree()
+    }
+
+    override fun solve1(isExample: Boolean): String {
+        return solvePart1(root)
+    }
+
+    override fun solve2(isExample: Boolean): String {
+        return solvePart2(root)
+    }
+
+    override fun getExampleAnswer1(): String {
+        TODO("Not yet implemented")
+    }
+
+    override fun getExampleAnswer2(): String {
+        TODO("Not yet implemented")
     }
 
     private fun constructTree(): Node {
@@ -78,7 +93,9 @@ class Day7: Day(7) {
         return root
     }
 
-    private fun solvePart1(root: Node) {
+
+
+    private fun solvePart1(root: Node): String {
         var sum = 0
 
         doRecursive(root) {
@@ -92,7 +109,7 @@ class Day7: Day(7) {
             }
         }
 
-        println("[7.1] $sum")
+        return "$sum"
     }
 
     private fun <T> doRecursive(node: Node, callback: (Node) -> T) {
@@ -102,7 +119,7 @@ class Day7: Day(7) {
         }
     }
 
-    private fun solvePart2(root: Node) {
+    private fun solvePart2(root: Node): String {
         val totalSpace = 70000000
         val neededSpace = 30000000
         val freeSpace = totalSpace - root.getSize()
@@ -120,7 +137,7 @@ class Day7: Day(7) {
         }
 
         suitableDirectories.sortBy { it.getSize() }
-        println("[7.2] ${suitableDirectories[0].getSize()}")
+        return "${suitableDirectories[0].getSize()}"
     }
 
 

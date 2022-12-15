@@ -11,19 +11,22 @@ fun IntRange.overlaps(other: IntRange): Boolean {
 }
 
 class Day4: Day(4) {
-    override fun solve() {
-        solve1()
-        solve2()
-    }
-
-    fun solve1() {
+    override fun solve1(isExample: Boolean): String {
         val containingPairsCount = lines.map { toNumberPair(it) }.filter { pairContains(it) }.size
-        println("[4.1] $containingPairsCount")
+        return "$containingPairsCount"
     }
 
-    fun solve2() {
+    override fun solve2(isExample: Boolean): String {
         val overlappingPairsCount = lines.map { toNumberPair(it) }.filter { pairOverlaps(it) }.size
-        println("[4.2] $overlappingPairsCount")
+        return "$overlappingPairsCount"
+    }
+
+    override fun getExampleAnswer1(): String {
+        TODO("Not yet implemented")
+    }
+
+    override fun getExampleAnswer2(): String {
+        TODO("Not yet implemented")
     }
 
     private fun toNumberPair(line: String): Pair<IntRange, IntRange> {

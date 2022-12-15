@@ -1,12 +1,8 @@
 import java.util.Stack
 
 class Day5: Day(5) {
-    override fun solve() {
-        solve1()
-        solve2()
-    }
 
-    fun solve1() {
+    override fun solve1(isExample: Boolean): String {
         val stacks = constructStacks()
 
         for (line in lines) {
@@ -20,9 +16,11 @@ class Day5: Day(5) {
         print("[5.1] ")
         stacks.forEach { print(it.peek()) }
         println()
+
+        return ""
     }
 
-    fun solve2() {
+    override fun solve2(isExample: Boolean): String {
         val stacks = constructStacks()
 
         for (line in lines) {
@@ -36,6 +34,16 @@ class Day5: Day(5) {
         print("[5.2] ")
         stacks.forEach { print(it.peek()) }
         println()
+
+        return ""
+    }
+
+    override fun getExampleAnswer1(): String {
+        TODO("Not yet implemented")
+    }
+
+    override fun getExampleAnswer2(): String {
+        TODO("Not yet implemented")
     }
 
     private fun applyMove(stacks: MutableList<Stack<String>>, move: String) {
