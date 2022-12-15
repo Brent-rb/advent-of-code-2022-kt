@@ -24,11 +24,11 @@ class Day12: Day(12) {
     }
 
     override fun getExampleAnswer1(): String {
-        TODO("Not yet implemented")
+        return "31"
     }
 
     override fun getExampleAnswer2(): String {
-        TODO("Not yet implemented")
+        return "29"
     }
     private fun dijkstra(startPos: Point, aWeight: Int = 1): DijkstraPoint {
         val points = mutableListOf<DijkstraPoint>()

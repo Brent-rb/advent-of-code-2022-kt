@@ -30,7 +30,7 @@ class Day3: Day(3) {
                 acc.intersect(set)
             }.toList()
 
-            println("[3.2] ${lines[i]} ${lines[i + 1]} ${lines[i + 2]} $intersect")
+            // println("[3.2] ${lines[i]} ${lines[i + 1]} ${lines[i + 2]} $intersect")
             sum += charToPriority(intersect[0])
 
             i += 3
@@ -40,11 +40,11 @@ class Day3: Day(3) {
     }
 
     override fun getExampleAnswer1(): String {
-        TODO("Not yet implemented")
+        return "157"
     }
 
     override fun getExampleAnswer2(): String {
-        TODO("Not yet implemented")
+        return "70"
     }
 
 

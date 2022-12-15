@@ -19,11 +19,11 @@ class Day9: Day(9) {
     }
 
     override fun getExampleAnswer1(): String {
-        TODO("Not yet implemented")
+        return "88"
     }
 
     override fun getExampleAnswer2(): String {
-        TODO("Not yet implemented")
+        return "36"
     }
     private fun simulateKnots(knotsAmount: Int): Int {
         val grid = mutableListOf(mutableListOf(true))

@@ -63,6 +63,7 @@ class Day13: Day(13) {
     private val entryPairs: MutableList<Pair<PacketEntry, PacketEntry>> = mutableListOf()
 
     override fun prepare1() {
+        entryPairs.clear()
         constructPairs()
     }
 
@@ -73,11 +74,11 @@ class Day13: Day(13) {
             val pair = entryPairs[index]
 
             if (pair.first <= pair.second) {
-                println("[13] Pair ${index + 1} is in order")
+                // println("[13] Pair ${index + 1} is in order")
                 rightIndices.add(index + 1)
             }
             else {
-                println("[13] Pair ${index + 1} is not in order")
+                // println("[13] Pair ${index + 1} is not in order")
             }
         }
 
@@ -97,11 +98,11 @@ class Day13: Day(13) {
     }
 
     override fun getExampleAnswer1(): String {
-        TODO("Not yet implemented")
+        return "13"
     }
 
     override fun getExampleAnswer2(): String {
-        TODO("Not yet implemented")
+        return "140"
     }
     private fun getDecoderEntries(): List<PacketEntry> {
         var entries = entryPairs.flatMap {
@@ -111,12 +112,7 @@ class Day13: Day(13) {
             PacketEntry(null, listOf(PacketEntry(null, listOf(PacketEntry(6)))))
         )
 
-        entries = entries.sorted()
-        for (entry in entries) {
-            println(entry)
-        }
-
-        return entries
+        return entries.sorted()
     }
 
     private fun constructPairs() {

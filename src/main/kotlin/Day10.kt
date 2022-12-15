@@ -20,14 +20,18 @@ class Day10: Day(10) {
     }
 
     override fun getExampleAnswer1(): String {
-        TODO("Not yet implemented")
+        return "13140"
     }
 
+    // Would be very difficult to implement
     override fun getExampleAnswer2(): String {
-        TODO("Not yet implemented")
+        return ""
     }
 
     private fun constructCycles() {
+        cycles.clear()
+        cycles.add(1)
+
         for (line in lines) {
             cycles.addAll(handleLine(line, cycles.last()))
         }

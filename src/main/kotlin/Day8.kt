@@ -32,7 +32,7 @@ class Day8: Day(8) {
             }
         }
 
-        printVisibleTrees()
+        // printVisibleTrees()
 
         return "$visibleAmount"
     }
@@ -63,14 +63,18 @@ class Day8: Day(8) {
     }
 
     override fun getExampleAnswer1(): String {
-        TODO("Not yet implemented")
+        return "21"
     }
 
     override fun getExampleAnswer2(): String {
-        TODO("Not yet implemented")
+        return "8"
     }
 
     private fun readGrid() {
+        verticalTrees.clear()
+        horizontalTrees.clear()
+        visibleTrees.clear()
+
         lines.forEachIndexed { row, line ->
             val treeLine = mutableListOf<Int>()
             val visibleLine = mutableListOf<Boolean>()

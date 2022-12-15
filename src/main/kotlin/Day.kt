@@ -33,7 +33,7 @@ abstract class Day(private val dayNumber: Int) {
 
         prepare2()
         val result2 = solve2(false)
-        println("[$dayNumber.1] Answer: $result2")
+        println("[$dayNumber.2] Answer: $result2")
     }
 
     open fun prepare1() {

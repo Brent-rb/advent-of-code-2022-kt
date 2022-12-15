@@ -11,14 +11,18 @@ class Day11: Day(11) {
     private val monkeys: MutableList<Monkey> = mutableListOf()
     private var commonDivisor = 1L
 
-    override fun prepare1() {
-        constructMonkeys()
-    }
-
-    override fun prepare2() {
+    private fun prepare() {
         monkeys.clear()
         commonDivisor = 1L
         constructMonkeys()
+    }
+
+    override fun prepare1() {
+        prepare()
+    }
+
+    override fun prepare2() {
+        prepare()
     }
 
     override fun solve1(isExample: Boolean): String {
@@ -30,11 +34,11 @@ class Day11: Day(11) {
     }
 
     override fun getExampleAnswer1(): String {
-        TODO("Not yet implemented")
+        return "10605"
     }
 
     override fun getExampleAnswer2(): String {
-        TODO("Not yet implemented")
+        return "2713310158"
     }
 
     private fun simulateRounds(rounds: Int, divideBy3: Boolean): Long {

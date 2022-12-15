@@ -1,7 +1,6 @@
 import java.util.Stack
 
 class Day5: Day(5) {
-
     override fun solve1(isExample: Boolean): String {
         val stacks = constructStacks()
 
@@ -13,11 +12,9 @@ class Day5: Day(5) {
             applyMove(stacks, line)
         }
 
-        print("[5.1] ")
-        stacks.forEach { print(it.peek()) }
-        println()
-
-        return ""
+        return stacks.joinToString("") {
+            it.peek().replace("[", "").replace("]", "")
+        }
     }
 
     override fun solve2(isExample: Boolean): String {
@@ -31,19 +28,17 @@ class Day5: Day(5) {
             applyMove2(stacks, line)
         }
 
-        print("[5.2] ")
-        stacks.forEach { print(it.peek()) }
-        println()
-
-        return ""
+        return stacks.joinToString("") {
+            it.peek().replace("[", "").replace("]", "")
+        }
     }
 
     override fun getExampleAnswer1(): String {
-        TODO("Not yet implemented")
+        return "CMZ"
     }
 
     override fun getExampleAnswer2(): String {
-        TODO("Not yet implemented")
+        return "MCD"
     }
 
     private fun applyMove(stacks: MutableList<Stack<String>>, move: String) {
@@ -58,7 +53,7 @@ class Day5: Day(5) {
             throw Error("Invalid move $move")
         }
 
-        println("[5.1] Move $amount from $from to $to")
+        // println("[5.1] Move $amount from $from to $to")
         for (i in 0 until amount) {
             stacks[to - 1].add(stacks[from - 1].pop())
         }
@@ -76,7 +71,7 @@ class Day5: Day(5) {
             throw Error("Invalid move $move")
         }
 
-        println("[5.1] Move $amount from $from to $to")
+        // println("[5.2] Move $amount from $from to $to")
         val poppedValues = mutableListOf<String>()
         for (i in 0 until amount) {
             poppedValues.add(stacks[from - 1].pop())

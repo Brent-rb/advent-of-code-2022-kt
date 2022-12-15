@@ -22,11 +22,11 @@ class Day4: Day(4) {
     }
 
     override fun getExampleAnswer1(): String {
-        TODO("Not yet implemented")
+        return "2"
     }
 
     override fun getExampleAnswer2(): String {
-        TODO("Not yet implemented")
+        return "4"
     }
 
     private fun toNumberPair(line: String): Pair<IntRange, IntRange> {

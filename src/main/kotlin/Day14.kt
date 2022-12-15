@@ -43,6 +43,12 @@ class Day14: Day(14) {
     private val maxPoint = Point(-10000000, -10000000)
 
     override fun prepare1() {
+        instructions.clear()
+        minPoint.x = 10000000
+        minPoint.y = 0
+        maxPoint.x = -10000000
+        maxPoint.y = -10000000
+
         parseInput()
     }
 
@@ -50,8 +56,8 @@ class Day14: Day(14) {
         constructGrid()
         val sandCount = simulateSand()
 
-        println()
-        printGrid()
+        // println()
+        // printGrid()
         return "$sandCount"
     }
     override fun solve2(isExample: Boolean): String {
@@ -60,17 +66,17 @@ class Day14: Day(14) {
         addFloor()
 
         val sandCount = simulateSand(true)
-        println()
-        printGrid()
+        // println()
+        // printGrid()
         return "$sandCount"
     }
 
     override fun getExampleAnswer1(): String {
-        TODO("Not yet implemented")
+        return "24"
     }
 
     override fun getExampleAnswer2(): String {
-        TODO("Not yet implemented")
+        return "93"
     }
 
     private fun simulateSand(voidBlocks: Boolean = false): Int {
@@ -272,9 +278,6 @@ class Day14: Day(14) {
                 previousPoint = currentPoint
             }
         }
-
-        println(minPoint)
-        println(maxPoint)
     }
 
     private fun printInstructions() {

@@ -69,11 +69,11 @@ class Day7: Day(7) {
     }
 
     override fun getExampleAnswer1(): String {
-        TODO("Not yet implemented")
+        return "95437"
     }
 
     override fun getExampleAnswer2(): String {
-        TODO("Not yet implemented")
+        return "24933642"
     }
 
     private fun constructTree(): Node {

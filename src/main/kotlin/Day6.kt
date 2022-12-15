@@ -10,11 +10,11 @@ class Day6: Day(6) {
     }
 
     override fun getExampleAnswer1(): String {
-        TODO("Not yet implemented")
+        return "11"
     }
 
     override fun getExampleAnswer2(): String {
-        TODO("Not yet implemented")
+        return "26"
     }
 
     fun searchForDistinctSubList(size: Int): Int {
